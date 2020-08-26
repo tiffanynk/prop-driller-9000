@@ -3,7 +3,6 @@ import React from 'react';
 import './App.css';
 
 import Header from './Components/Header';
-import TransformersSection from './Containers/TransformersSection';
 
 export default class App extends React.Component {
   state = {
@@ -27,12 +26,9 @@ export default class App extends React.Component {
   }
 
   render() {
-    const { proptimusLogo, proptimusii } = this.state
-
     return (
       <div className="App">
-        <Header logo = { proptimusLogo } />
-        <TransformersSection transformers = { proptimusii } />
+        <Header />
       </div>
     );
   }

@@ -1,12 +1,12 @@
 import React from 'react';
 
-function Header({ logo }) {
+function Header() {
 
   return (
     <header>
       <img
-        src={ logo }
-        alt="logo"
+        src = ""
+        alt = "logo"
       />
     </header>
   );
