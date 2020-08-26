@@ -1,12 +1,4 @@
-.App {
-  text-align: center;
-}
-
-img[alt="logo"] {
-  height: 40vmin;
-}
-
-header {
+#root {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -15,4 +7,20 @@ header {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+img[alt="logo"] {
+  height: 40vmin;
+}
+
+.transformers-section {
+  display: flex;
+}
+
+.transformer {
+  height: 40vmin;
 }

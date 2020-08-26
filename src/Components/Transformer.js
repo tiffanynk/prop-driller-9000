@@ -1,11 +1,13 @@
 import React from 'react';
 
-function Transformer() {
+function Transformer({ transformer }) {
 
   return (
-    <div className = "transformer-card">
-
-    </div>
+    <img
+      className = 'transformer'
+      src = { transformer.url }
+      alt = { transformer.name }
+    />
   );
 }
 
