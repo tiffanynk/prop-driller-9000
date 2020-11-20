@@ -1,8 +1,10 @@
 import React from 'react';
+import Header from './Components/Header';
+import TransformersSection from './Containers/TransformersSection';
+// import Transformer from './Components/Transformer';
 
 import './App.css';
 
-import Header from './Components/Header';
 
 export default class App extends React.Component {
   state = {
@@ -25,11 +27,18 @@ export default class App extends React.Component {
     ]
   }
 
+  handleHiddenProps = () => {
+    const section = document.querySelector('.transformers-section hidden')
+    return console.log(section)
+  }
+
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header src={this.state.proptimusLogo} onClick={this.handleHiddenProps()}/>
+        <TransformersSection proptimusii={this.state.proptimusii}/>
       </div>
     );
   }
+
 }

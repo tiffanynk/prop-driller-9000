@@ -34,3 +34,7 @@ img[alt="logo"] {
 .transformer {
   height: 40vmin;
 }
+
+.hidden{
+  display: none
+}
