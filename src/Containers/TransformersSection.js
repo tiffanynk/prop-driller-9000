@@ -2,6 +2,15 @@ import React, { Component } from 'react';
 import Transformer from '../Components/Transformer'
 
 class TransformersSection extends Component {
+  state = {
+    isActive: false
+  }
+
+  handleClick = () => {
+    this.setState({
+      isActive: true
+    })
+  }
 
   showTransformers = () => {
     return this.props.proptimusii.map(transformer => {
@@ -17,8 +26,8 @@ class TransformersSection extends Component {
 
   render() {
     return (
-      <section className = "transformers-section">
-        {this.showTransformers()}
+      <section onClick={this.handleClick} className = "transformers-section">
+        {this.state.isActive ? this.showTransformers() : null}
       </section>
     );
   }

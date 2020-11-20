@@ -8,6 +8,7 @@ import './App.css';
 
 export default class App extends React.Component {
   state = {
+    isEmpty: true,
     proptimusLogo: 'https://i.pinimg.com/originals/f8/7d/ec/f87dec9d6334af383a27f73e48ccf154.png',
     proptimusii: [
       {
@@ -24,21 +25,23 @@ export default class App extends React.Component {
         name: 'omega',
         url: 'http://pngimg.com/uploads/transformers/transformers_PNG3.png'
       }
-    ]
+    ],
   }
 
-  handleHiddenProps = () => {
-    const section = document.querySelector('.transformers-section hidden')
-    return console.log(section)
-  }
-
+  // handleClick = () => {
+  //   this.setState({
+  //     hiddenProptimusii: false
+  //   })
+  //   return (this.state.hiddenProptimusii ? null : <TransformersSection proptimusii={this.state.proptimusii}/>)
+  // }
+  
   render() {
     return (
       <div className="App">
-        <Header src={this.state.proptimusLogo} onClick={this.handleHiddenProps()}/>
+        <Header src={this.state.proptimusLogo}/>
         <TransformersSection proptimusii={this.state.proptimusii}/>
       </div>
-    );
+    )
   }
 
 }
