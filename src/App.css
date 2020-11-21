@@ -29,12 +29,14 @@ img[alt="logo"] {
 .transformers-section {
   padding-bottom: 3rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .transformer {
   height: 40vmin;
-}
-
-.hidden{
-  display: none
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

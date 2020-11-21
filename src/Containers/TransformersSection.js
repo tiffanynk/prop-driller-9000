@@ -1,36 +1,33 @@
 import React, { Component } from 'react';
-import Transformer from '../Components/Transformer'
-
+import Transformer from '../Components/Transformer';
+import '../App.css'
 class TransformersSection extends Component {
   state = {
-    isActive: false
+    transformerIndex: 0
   }
 
-  handleClick = () => {
-    this.setState({
-      isActive: true
+  getEachTransformer = () => {
+    return this.props.proptimusii.map(proptimus => {
+      return <Transformer transformer={ proptimus }/>
     })
   }
+  displayOneTransformer = () => {
+    return <Transformer transformer={this.props.proptimusii[this.state.transformerIndex]} onClick = {this.cycleTransformers}
+            />
+  }
 
-  showTransformers = () => {
-    return this.props.proptimusii.map(transformer => {
-      return (
-        <Transformer 
-          key={transformer.id}
-          url={transformer.url} 
-          name={transformer.name}
-        />
-      )
-    })
+  cycleTransformers = () => {
+    (this.state.transformerIndex < (this.props.proptimusii.length - 1))
+    ? this.setState(prevState => ({transformerIndex: prevState.transformerIndex + 1}))
+    : this.setState({transformerIndex: 0})
   }
 
   render() {
     return (
-      <section onClick={this.handleClick} className = "transformers-section">
-        {this.state.isActive ? this.showTransformers() : null}
+      <section className = "transformers-section">
+        {this.displayOneTransformer()}
       </section>
     );
   }
 }
-
 export default TransformersSection;
